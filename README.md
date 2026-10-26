@@ -2,18 +2,20 @@
 
 AS3D is an AI-powered 3D model creation studio built with React, Vercel serverless API routes, Supabase, and Tripo AI.
 
-## Project files
+## Source code
 
-The full source code is being published to this repository. See `tripo-studio-web/README.md` for setup, environment variables, Tripo API integration, Supabase schema, UPI-only checkout planning, and model export notes.
+The app, serverless API routes, Supabase schema, and setup instructions are available in [`tripo-studio-web/`](./tripo-studio-web/README.md).
 
 ## Architecture
 
-- Frontend: React + Vite
+- Frontend: React + Vite, responsive dark charcoal and lime-green UI
 - Hosting and backend routes: Vercel
-- Authentication and database: Supabase
+- Authentication, Postgres database, and storage policies: Supabase
 - Model generation: Tripo API
-- Payments for India: UPI only (production payment verification must be configured before collecting payments)
+- Free plan: one generation per account, preview only, no model downloads
+- Paid export options: GLB, STL, OBJ, and USDZ conversion interface
+- Payments in India: UPI only. The UI is present, but gateway processing and signed payment verification are not connected yet.
 
-## Safety
+## Before deployment
 
-Never commit API keys, Supabase service-role keys, or payment secrets. Configure them as Vercel environment variables.
+Read the [setup and production readiness guide](./tripo-studio-web/README.md). Add secrets only as Vercel environment variables. Do not commit Tripo API keys, Supabase service-role keys, or payment secrets. Run `npm install` and `npm run build` from the app directory before deploying.
